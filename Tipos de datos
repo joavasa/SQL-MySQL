@@ -1,0 +1,56 @@
+En MySQL, los tipos de datos se dividen en tres categorías principales:
+
+1️⃣ Tipos de datos numéricos
+Se utilizan para almacenar valores numéricos, tanto enteros como decimales.
+- Enteros:
+TINYINT (1 byte, valores de -128 a 127 o 0 a 255 sin signo)
+SMALLINT (2 bytes, valores de -32,768 a 32,767)
+MEDIUMINT (3 bytes, valores de -8,388,608 a 8,388,607)
+INT o INTEGER (4 bytes, valores de -2,147,483,648 a 2,147,483,647)
+BIGINT (8 bytes, valores muy grandes, hasta ±9 cuatrillones)
+- Decimales y de punto flotante:
+FLOAT(M, D) (4 bytes, precisión simple)
+DOUBLE(M, D) o REAL (8 bytes, precisión doble)
+DECIMAL(M, D) o NUMERIC(M, D) (almacena números exactos, útil para dinero)
+
+2️⃣ Tipos de datos de fecha y hora
+Se utilizan para almacenar información de fechas y horas.
+DATE (YYYY-MM-DD, rango de 1000-01-01 a 9999-12-31)
+DATETIME (YYYY-MM-DD HH:MM:SS, mismo rango que DATE)
+TIMESTAMP (YYYY-MM-DD HH:MM:SS, rango de 1970 a 2038, afectado por zona horaria)
+TIME (HH:MM:SS, de -838:59:59 a 838:59:59)
+YEAR (YYYY, de 1901 a 2155)
+
+3️⃣ Tipos de datos de cadena de texto
+Se utilizan para almacenar texto y datos alfanuméricos.
+
+- Cadenas de longitud fija:
+CHAR(N) (hasta 255 caracteres, longitud fija)
+
+- Cadenas de longitud variable:
+VARCHAR(N) (hasta 65,535 caracteres, longitud variable)
+
+- Tipos de texto:
+TINYTEXT (hasta 255 caracteres)
+TEXT (hasta 65,535 caracteres)
+MEDIUMTEXT (hasta 16,777,215 caracteres)
+LONGTEXT (hasta 4,294,967,295 caracteres)
+
+- Tipos binarios (almacenan datos en formato binario, como imágenes o archivos):
+BLOB (igual que TEXT, pero para datos binarios)
+
+
+En MySQL, la notación FLOAT(M, D) y DOUBLE(M, D) define la precisión del número almacenado.
+
+NOTA: 
+M (Máximo de dígitos) → Representa la cantidad total de dígitos (enteros + decimales).
+D (Dígitos decimales) → Especifica cuántos de esos dígitos son decimales.
+EJEMPLO: FLOAT(7, 3)
+M = 7 → Puede almacenar hasta 7 dígitos en total.
+D = 3 → De esos 7 dígitos, 3 serán después del punto decimal.
+Rango posible: -9999.999 a 9999.999
+
+Notas importantes:
+Desde MySQL 8.0.17, la notación (M, D) en FLOAT y DOUBLE está obsoleta, y solo se recomienda especificar el tipo (FLOAT o DOUBLE) sin (M, D), ya que MySQL manejará la precisión automáticamente.
+Si M no se especifica, el número almacenará tantos dígitos como el sistema lo permita dentro del rango del tipo de dato.
+Si necesitas precisión exacta para cálculos financieros, es mejor usar DECIMAL(M, D) en lugar de FLOAT o DOUBLE, ya que estos últimos pueden sufrir errores de redondeo.
