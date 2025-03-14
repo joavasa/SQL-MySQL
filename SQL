@@ -1,0 +1,24 @@
+Base de datos
+Entiedad mas importante de una db es la tabla(objeto predefinido)
+
+- campos= columnas , numero limitado
+- registros = filas, numero ilimitado
+
+- indice: facilita la busqueda de registros
+
+Definir la cantidad de campos y el tipo de dato de cada campo
+
+texto: char, var char,text
+numerico : int, bigint, smallint, float, bool
+fecha: date, datetime, timestamp
+
+ELEMENTOS:
+- claves primaria(registro que no se repite), no es obligatorio, la combinacion de 2 campos(clave primaria compuesta) no se puede repetir en otro registro
+- clave externa foranea, campo que permite relacionar las tablas entre si.
+
+Las tablas se pueden agrupar a traves de esquemas(facilitan la organizacion de tablas por tema en la db).
+View(vista) se consulta un numero determinado "n" de tablas al mismo tiempo. Alto costo de procesamiento.
+Procedure(procedimientos) logica estructura con lenguaje nativo del mismo SQL(if, while, for)
+
+Trigger(disparador) avisos automaticos cuando hay algun tipo de cambio en la base de datos o en la tabla
+
